@@ -17,4 +17,16 @@ public class PedidoService {
 	public List<Pedido> findAll() {
 		return dao.findAll();
 	}
+
+	public void save(Pedido pedido) {
+		dao.save(pedido);
+	}
+
+	public Pedido getOne(long id) {
+		return dao.getOne(id);
+	}
+
+	public void delete(long pedido) {
+		dao.delete(pedido);
+	}
 }
