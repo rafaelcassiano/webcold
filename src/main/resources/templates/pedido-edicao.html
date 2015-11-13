@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link type="text/css" th:href="@{/resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script type="text/javascript" th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+    <title>Web Cold</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>
+            Pedido - Inclusão/Edição
+        </h2>
+    </div>
+    <div class="panel-body">
+        <form action="#" data-th-action="@{/pedido/save}" data-th-object="${pedido}" method="post">
+            <div class="col-md-6">
+                <input type="hidden" data-th-value="*{id}" data-th-field="*{id}"/>
+                <div class="form-group">
+                    <label>Descrição</label>
+                    <input type="text" class="form-control" data-th-value="*{descricao}" data-th-field="*{descricao}"/>
+                </div>
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <input type="text" class="form-control" data-th-value="*{tipo}" data-th-field="*{tipo}"/>
+                </div>
+                <div class="form-group">
+                    <label>Nota Fiscal</label>
+                    <input type="text" class="form-control" data-th-value="*{notaFiscal}" data-th-field="*{notaFiscal}"/>
+                </div>
+                <div class="form-group">
+                    <label>Cliente</label>
+                    <select class="form-control" th:field="*{cliente}">
+                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nome}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Técnico</label>
+                    <select class="form-control" th:field="*{tecnico}">
+                        <option th:each="tecnico : ${tecnicos}" th:value="${tecnico.id}" th:text="${tecnico.nome}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <p class="text-right bold">Desenvolvido por: <strong>Grupo</strong></p>
+    </div>
+</div>
+</body>
+</html>
