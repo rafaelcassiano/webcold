@@ -21,6 +21,8 @@ public class Cliente {
 	private String email;
 	@Column(name = "telefone")
 	private String telefone;
+	@Column(name = "fg_ativo")
+	private boolean fgAtivo;
 
 	public Cliente() {
 		// TODO Auto-generated constructor stub
@@ -56,6 +58,18 @@ public class Cliente {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public boolean isFgAtivo() {
+		return fgAtivo;
+	}
+
+	public void setFgAtivo(boolean fgAtivo) {
+		this.fgAtivo = fgAtivo;
+	}
+	
+	public String getFgAtivoStr() {
+		return fgAtivo ? "Sim" : "Não";
 	}
 
 }

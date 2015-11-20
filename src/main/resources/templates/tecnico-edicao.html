@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link type="text/css" th:href="@{/resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script type="text/javascript" th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+    <title>Web Cold</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>
+            Técnico - Inclusão/Edição
+        </h2>
+    </div>
+    <div class="panel-body">
+        <form action="#" data-th-action="@{/tecnico/save}" data-th-object="${tecnico}" method="post">
+            <div class="col-md-6">
+                <input type="hidden" data-th-value="*{id}" data-th-field="*{id}"/>
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" data-th-value="*{nome}" data-th-field="*{nome}"/>
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="text" class="form-control" data-th-value="*{telefone}" data-th-field="*{telefone}"/>
+                </div>
+                <div class="form-group">
+                    <label>Ativo?</label>
+                    <input type="checkbox" class="checkbox" data-th-value="*{fgAtivo}" data-th-field="*{fgAtivo}" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Salvar" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <p class="text-right bold">Desenvolvido por: <strong>Grupo</strong></p>
+    </div>
+</div>
+</body>
+</html>

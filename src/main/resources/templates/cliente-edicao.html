@@ -11,37 +11,24 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h2>
-            Pedido - Inclusão/Edição
+            Cliente - Inclusão/Edição
         </h2>
     </div>
     <div class="panel-body">
-        <form action="#" data-th-action="@{/pedido/save}" data-th-object="${pedido}" method="post">
+        <form action="#" data-th-action="@{/cliente/save}" data-th-object="${cliente}" method="post">
             <div class="col-md-6">
                 <input type="hidden" data-th-value="*{id}" data-th-field="*{id}"/>
                 <div class="form-group">
-                    <label>Descrição</label>
-                    <input type="text" class="form-control" data-th-value="*{descricao}" data-th-field="*{descricao}"/>
+                    <label>Nome</label>
+                    <input required="required" type="text" class="form-control" data-th-value="*{nome}" data-th-field="*{nome}"/>
                 </div>
                 <div class="form-group">
-                    <label>Tipo</label>
-                    <input type="text" class="form-control" data-th-value="*{tipo}" data-th-field="*{tipo}"/>
+                    <label>Email</label>
+                    <input type="email" class="form-control" data-th-value="*{email}" data-th-field="*{email}"/>
                 </div>
                 <div class="form-group">
-                    <label>Nota Fiscal</label>
-                    <input type="text" class="form-control" data-th-value="*{notaFiscal}" data-th-field="*{notaFiscal}"/>
-                </div>
-                <div class="form-group">
-                    <label>Cliente</label>
-                    <select class="form-control" th:field="*{cliente}">
-                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nome}"></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Técnico</label>
-                    <select class="form-control" th:field="*{tecnico}">
-                        <option value=""> </option>
-                        <option th:each="tecnico : ${tecnicos}" th:value="${tecnico.id}" th:text="${tecnico.nome}"></option>
-                    </select>
+                    <label>Telefone</label>
+                    <input type="number" class="form-control" data-th-value="*{telefone}" data-th-field="*{telefone}"/>
                 </div>
                 <div class="form-group">
                     <label>Ativo?</label>

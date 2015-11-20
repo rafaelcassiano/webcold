@@ -24,6 +24,8 @@ public class Pedido {
 	private String tipo;
 	@Column(name = "nota_fiscal")
 	private String notaFiscal;
+	@Column(name = "fg_ativo")
+	private boolean fgAtivo;
 	@ManyToOne
 	@JoinColumn(name = "tecnico_id", foreignKey = @ForeignKey(name = "FK_pedido__tecnico"))
 	private Tecnico tecnico;
@@ -81,6 +83,18 @@ public class Pedido {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	public boolean isFgAtivo() {
+		return fgAtivo;
+	}
+
+	public void setFgAtivo(boolean fgAtivo) {
+		this.fgAtivo = fgAtivo;
+	}
+	
+	public String getFgAtivoStr() {
+		return fgAtivo ? "Sim" : "Não";
 	}
 
 }

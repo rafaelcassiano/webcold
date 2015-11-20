@@ -26,7 +26,7 @@ public class PedidoService {
 		return dao.getOne(id);
 	}
 
-	public void delete(long pedido) {
-		dao.delete(pedido);
+	public void delete(long id) {
+		dao.delete(id);
 	}
 }

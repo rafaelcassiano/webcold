@@ -19,6 +19,8 @@ public class Tecnico {
 	private String nome;
 	@Column(name = "telefone")
 	private String telefone;
+	@Column(name = "fg_ativo")
+	private boolean fgAtivo;
 
 	public Tecnico() {
 		// TODO Auto-generated constructor stub
@@ -46,5 +48,17 @@ public class Tecnico {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public boolean isFgAtivo() {
+		return fgAtivo;
+	}
+
+	public void setFgAtivo(boolean fgAtivo) {
+		this.fgAtivo = fgAtivo;
+	}
+
+	public String getFgAtivoStr() {
+		return fgAtivo ? "Sim" : "Não";
 	}
 }

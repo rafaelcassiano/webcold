@@ -16,4 +16,16 @@ public class ClienteService {
 	public List<Cliente> findAll() {
 		return dao.findAll();
 	}
+
+	public Cliente getOne(long id) {
+		return dao.getOne(id);
+	}
+
+	public void save(Cliente cliente) {
+		dao.save(cliente);
+	}
+
+	public void delete(long id) {
+		dao.delete(id);
+	}
 }

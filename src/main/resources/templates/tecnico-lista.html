@@ -11,31 +11,25 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h2>
-            Pedido - Lista  <small><a th:href="@{/pedido/new}">Incluir</a></small>
+            Técnico - Lista  <small><a th:href="@{/tecnico/new}">Incluir</a></small>
         </h2>
     </div>
     <div class="panel-body">
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Descrição</th>
-              <th>Tipo</th>
-              <th>Nota Fiscal</th>
-              <th>Cliente</th>
-              <th>Tecnico</th>
+              <th>Nome</th>
+              <th>Telefone</th>
               <th>Ativo?</th>
               <th>Editar</th>
             </tr>
           </thead>
           <tbody>
-            <tr th:each="pedido : ${pedidos}">
-              <td th:text="${pedido.descricao}"></td>
-              <td th:text="${pedido.tipo}"></td>
-              <td th:text="${pedido.notaFiscal}"></td>
-              <td th:text="${pedido.cliente.nome}"></td>
-              <td th:text="${pedido.tecnico != null ? pedido.tecnico.nome : ''}"></td>
-              <td th:text="${pedido.fgAtivoStr}"></td>
-              <td><a th:href="@{/pedido/edit/}+${pedido.id}">Editar</a></td>
+            <tr th:each="tecnico : ${tecnicos}">
+              <td th:text="${tecnico.nome}"></td>
+              <td th:text="${tecnico.telefone}"></td>
+              <td th:text="${tecnico.fgAtivoStr}"></td>
+              <td><a th:href="@{/tecnico/edit/}+${tecnico.id}">Editar</a></td>
             </tr>
           </tbody>
         </table>

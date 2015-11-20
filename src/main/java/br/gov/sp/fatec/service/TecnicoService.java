@@ -17,4 +17,16 @@ public class TecnicoService {
 	public List<Tecnico> findAll() {
 		return dao.findAll();
 	}
+
+	public void delete(long id) {
+		dao.delete(id);
+	}
+
+	public Tecnico getOne(long id) {
+		return dao.getOne(id);
+	}
+
+	public void save(Tecnico tecnico) {
+		dao.save(tecnico);
+	}
 }
